@@ -32,7 +32,7 @@
           ticketResolve: newTicket
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['commuter', 'admin'],
           pageTitle: 'Tickets Create'
         }
       })
@@ -45,7 +45,7 @@
           ticketResolve: getTicket
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['commuter', 'admin'],
           pageTitle: 'Edit Ticket {{ ticketResolve.name }}'
         }
       })

@@ -20,6 +20,7 @@
         controller: 'HotelsListController',
         controllerAs: 'vm',
         data: {
+          roles: ['hotelowner', 'admin','commuter'],
           pageTitle: 'Hotels List'
         }
       })
@@ -32,7 +33,7 @@
           hotelResolve: newHotel
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['hotelowner', 'admin'],
           pageTitle: 'Hotels Create'
         }
       })
@@ -45,7 +46,7 @@
           hotelResolve: getHotel
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['hotelowner', 'admin'],
           pageTitle: 'Edit Hotel {{ hotelResolve.name }}'
         }
       })
@@ -58,6 +59,7 @@
           hotelResolve: getHotel
         },
         data: {
+          roles: ['hotelowner', 'admin','commuter'],
           pageTitle: 'Hotel {{ hotelResolve.name }}'
         }
       });

@@ -26,7 +26,7 @@
     menuService.addSubMenuItem('topbar', 'trains', {
       title: 'Create Train',
       state: 'trains.create',
-      roles: ['user']
+      roles: ['admin']
     });
   }
 }());

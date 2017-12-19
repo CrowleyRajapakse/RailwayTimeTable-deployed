@@ -38,13 +38,17 @@
           <td>{{train.endStation}}</td>
           <td>{{train.startTime}}</td>
           <td>{{train.endTime}}</td>
-          <td><button class="btn btn-primary" ng-click="">Book Ticket</button></td>
+          <td><a class="btn btn-primary" href="/tickets/create" target="_blank">Book Ticket</a></td>
 
         </tr>
       </table>
 
     </div>
   </fieldset>
+  <div>
+    <a class="btn btn-success" href="/tickets/create" target="_blank">Book Ticket</a>
+  </div>
+
   <!--
   <div class="list-group">
     <a ng-repeat="train in vm.trains"

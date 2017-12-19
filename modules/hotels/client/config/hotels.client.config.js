@@ -26,7 +26,7 @@
     menuService.addSubMenuItem('topbar', 'hotels', {
       title: 'Create Hotel',
       state: 'hotels.create',
-      roles: ['user']
+      roles: ['hotelowner','admin']
     });
   }
 }());

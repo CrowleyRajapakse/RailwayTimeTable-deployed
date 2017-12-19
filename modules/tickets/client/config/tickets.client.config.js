@@ -26,7 +26,7 @@
     menuService.addSubMenuItem('topbar', 'tickets', {
       title: 'Create Ticket',
       state: 'tickets.create',
-      roles: ['user']
+      roles: ['commuter','admin']
     });
   }
 }());

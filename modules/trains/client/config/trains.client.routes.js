@@ -32,7 +32,7 @@
           trainResolve: newTrain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Trains Create'
         }
       })
@@ -45,7 +45,7 @@
           trainResolve: getTrain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Edit Train {{ trainResolve.name }}'
         }
       })

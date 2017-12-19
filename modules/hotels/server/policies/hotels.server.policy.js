@@ -22,7 +22,7 @@ exports.invokeRolesPolicies = function () {
       permissions: '*'
     }]
   }, {
-    roles: ['user'],
+    roles: ['hotelowner'],
     allows: [{
       resources: '/api/hotels',
       permissions: ['get', 'post']
@@ -31,7 +31,7 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get']
     }]
   }, {
-    roles: ['guest'],
+    roles: ['commuter'],
     allows: [{
       resources: '/api/hotels',
       permissions: ['get']

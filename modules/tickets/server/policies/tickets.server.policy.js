@@ -22,7 +22,7 @@ exports.invokeRolesPolicies = function () {
       permissions: '*'
     }]
   }, {
-    roles: ['user'],
+    roles: ['commuter'],
     allows: [{
       resources: '/api/tickets',
       permissions: ['get', 'post']
