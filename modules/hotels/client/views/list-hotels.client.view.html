@@ -1,0 +1,56 @@
+<section>
+  <div class="page-header">
+    <h1>Hotels</h1>
+  </div>
+  <form class="form-inline">
+    <div class="form-group" style="padding-left:4em " >
+      <label >Hotel Name &emsp;</label>
+      <input type="text" ng-model="search" class="form-control" placeholder="Search">
+    </div>
+
+    <div class="form-group" style="padding-left:4em " >
+      <label >Location &emsp;</label>
+      <input type="text" ng-model="search" class="form-control" placeholder="Search">
+    </div>
+  </form>
+  </br>
+  <fieldset>
+    <div>
+      <table class="table table-striped">
+        <tr >
+          <td><b>Name</b></td>
+          <td><b>Location</b></td>
+          <td><b>Contact Number</b></td>
+          <td><b>Available Facilities</b></td>
+          <td><b>Website</b></td>
+        </tr>
+        <tr ng-repeat="hotel in vm.hotels |filter:search" ui-sref="hotels.view({ hotelId: hotel._id })">
+          <td>{{hotel.name}}</td>
+          <td>{{hotel.location}}</td>
+          <td>{{hotel.contactNo}}</td>
+          <td>{{hotel.facilities}}</td>
+          <td>{{hotel.website}}</td>
+        </tr>
+      </table>
+    </div>
+  </fieldset>
+  <!--
+  <div class="list-group">
+    <a ng-repeat="hotel in vm.hotels"
+       ui-sref="hotels.view({ hotelId: hotel._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="hotel.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="hotel.user" ng-bind="hotel.user.displayName"></span>
+        <span ng-if="!hotel.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="hotel.name"></h4>
+    </a>
+  </div>
+  -->
+  <div class="alert alert-warning text-center" ng-if="vm.hotels.$resolved && !vm.hotels.length">
+    No Hotels yet, why don't you <a ui-sref="hotels.create">create one</a>?
+  </div>
+</section>

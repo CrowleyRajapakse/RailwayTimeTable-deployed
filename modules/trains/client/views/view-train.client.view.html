@@ -1,0 +1,41 @@
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.train.name"></h1>
+    <br>
+    <div id="print">
+      <p>Name : {{vm.train.name}}</p>
+      <p>Number : {{vm.train.number}}</p>
+      <p>Train Model : {{vm.train.tmodel}}</p>
+      <p>Power Type : {{vm.train.powerType}}</p>
+      <p>Capacity : {{vm.train.capacity}}</p>
+      <p>Start Station : {{vm.train.startStation}}</p>
+      <p>Start Time : {{vm.train.startTime}}</p>
+      <p>End Station : {{vm.train.endStation}}</p>
+      <p>End Time : {{vm.train.endTime}}</p>
+    </div>
+  </div>
+  <div>
+   <p>Picture : {{vm.train.picture}}</p>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.train.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="trains.edit({ trainId: vm.train._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.train.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.train.user"
+            ng-bind="vm.train.user.displayName"></span>
+      <span ng-if="!vm.train.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.train.content"></p>
+</section>

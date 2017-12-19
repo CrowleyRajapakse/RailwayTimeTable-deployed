@@ -1,0 +1,102 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.train._id ? 'Edit Train' : 'New Train'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.trainForm" class="form-horizontal" ng-submit="vm.save(vm.form.trainForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.train.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.trainForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Train name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="number">Number</label>
+          <input name="number" type="text" ng-model="vm.train.number" id="number" class="form-control" placeholder="Number" required>
+          <div ng-messages="vm.form.trainForm.number.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Train number is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="tmodel">Model</label>
+          <input name="tmodel" type="text" ng-model="vm.train.tmodel" id="tmodel" class="form-control" placeholder="Tmodel" required>
+          <div ng-messages="vm.form.trainForm.tmodel.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Train model is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="powerType">Power Type</label>
+          <select name="powerType" type="text" ng-model="vm.train.powerType" id="powerType" class="form-control"  required>
+            <option value="">----Please Select----</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Electric">Electric</option>
+            <option value="Magnetic">Magnetic</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="capacity">Capacity</label>
+          <input name="capacity" type="text" ng-model="vm.train.capacity" id="capacity" class="form-control" placeholder="Capacity" required>
+          <div ng-messages="vm.form.trainForm.capacity.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Train Capacity is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="startStation">Start Station</label>
+          <select name="startStation" type="text" ng-model="vm.train.startStation" id="startStation" class="form-control"  required>
+            <option value="">----Please Select----</option>
+            <option value="Maradana">Maradana</option>
+            <option value="Fort">Fort</option>
+            <option value="Kollupitiya">Kollupitiya</option>
+            <option value="MountLavinia">Mount Lavinia</option>
+            <option value="Moratuwa">Moratuwa</option>
+            <option value="Panadura">Panadura</option>
+            <option value="KalutaraNorth">Kaluthara North</option>
+            <option value="KalutaraSouth">Kaluthara South</option>
+            <option value="Galle">Galle</option>
+            <option value="Matara">Matara</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="startTime">Start Time</label>
+          <input type="time" id="startTime" name="startTime" ng-model="vm.train.startTime"  required />
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="endStation">End Station</label>
+          <select name="endStation" type="text" ng-model="vm.train.endStation" id="endStation" class="form-control"  required>
+            <option value="">----Please Select----</option>
+            <option value="Maradana">Maradana</option>
+            <option value="Fort">Fort</option>
+            <option value="Kollupitiya">Kollupitiya</option>
+            <option value="MountLavinia">Mount Lavinia</option>
+            <option value="Moratuwa">Moratuwa</option>
+            <option value="Panadura">Panadura</option>
+            <option value="KalutaraNorth">Kaluthara North</option>
+            <option value="KalutaraSouth">Kaluthara South</option>
+            <option value="Galle">Galle</option>
+            <option value="Matara">Matara</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="endTime">End Time</label>
+          <input type="time" id="endTime" name="endTime" ng-model="vm.train.endTime"  required />
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="picture">Upload Picture</label>
+          <input type="file" id="picture" name="Picture"  ng-model="vm.train.picture"/>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.train._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+<section>
+  <div class="page-header">
+    <h1>Trains</h1>
+  </div>
+  <form class="form-inline">
+    <div class="form-group" style="padding-left:4em " >
+      <label >Start Station &emsp;</label>
+      <input type="text" ng-model="search" class="form-control" placeholder="Search" style="padding-left:4em ">
+    </div>
+    <div class="form-group" style="padding-left:4em " >
+      <label >End Station &emsp;</label >
+      <input type="text" ng-model="search" class="form-control" placeholder="Search" style="padding-left:4em ">
+    </div>
+    </br>
+    <div class="form-group" style="padding-left:4em " >
+      </br>
+      <label >Date &emsp;&emsp;&emsp;&emsp;&emsp;</label>
+      <input type="date" class="form-control" style="padding-left:4em ">
+    </div>
+  </form>
+  </br>
+  <fieldset>
+    <div>
+      <table class="table table-striped">
+        <tr >
+          <td><b>Name</b></td>
+          <td><b>Number</b></td>
+          <td><b>Start Station</b></td>
+          <td><b>End Station</b></td>
+          <td><b>Start Time</b></td>
+          <td><b>End Time</b></td>
+          <td><b>Book</b></td>
+        </tr>
+        <tr ng-repeat="train in vm.trains |filter:search" ui-sref="trains.view({ trainId: train._id })">
+          <td>{{train.name}}</td>
+          <td>{{train.number}}</td>
+          <td>{{train.startStation}}</td>
+          <td>{{train.endStation}}</td>
+          <td>{{train.startTime}}</td>
+          <td>{{train.endTime}}</td>
+          <td><button class="btn btn-primary" ng-click="">Book Ticket</button></td>
+
+        </tr>
+      </table>
+
+    </div>
+  </fieldset>
+  <!--
+  <div class="list-group">
+    <a ng-repeat="train in vm.trains"
+       ui-sref="trains.view({ trainId: train._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="train.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="train.user" ng-bind="train.user.displayName"></span>
+        <span ng-if="!train.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="train.name"></h4>
+    </a>
+  </div>
+  -->
+  <div class="alert alert-warning text-center" ng-if="vm.trains.$resolved && !vm.trains.length">
+    No Trains yet, why don't you <a ui-sref="trains.create">create one</a>?
+  </div>
+</section>

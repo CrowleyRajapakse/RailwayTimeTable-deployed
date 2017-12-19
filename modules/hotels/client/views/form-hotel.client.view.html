@@ -1,0 +1,53 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.hotel._id ? 'Edit Hotel' : 'New Hotel'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.hotelForm" class="form-horizontal" ng-submit="vm.save(vm.form.hotelForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.hotel.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.hotelForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Hotel name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Location</label>
+          <input name="location" type="text" ng-model="vm.hotel.location" id="location" class="form-control" placeholder="Location" required>
+          <div ng-messages="vm.form.hotelForm.location.$error" role="alert">
+           <p class="help-block error-text" ng-message="required">Hotel Location is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="contactNo">Contact Number</label>
+          <input name="contactNo" type="number" ng-model="vm.hotel.contactNo" id="contactNo" class="form-control" placeholder="ContactNo" required>
+          <div ng-messages="vm.form.hotelForm.contactNo.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Hotel Contact No is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="facilities">Available Facilities</label>
+          <input name="facilities" type="text" ng-model="vm.hotel.facilities" id="facilities" class="form-control" placeholder="Facilities" required>
+          <div ng-messages="vm.form.hotelForm.facilities.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Hotel facilities are required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="website">Website</label>
+          <input name="website" type="text" ng-model="vm.hotel.website" id="website" class="form-control" placeholder="Website" required>
+          <div ng-messages="vm.form.hotelForm.website.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Hotel website is required.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.hotel._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

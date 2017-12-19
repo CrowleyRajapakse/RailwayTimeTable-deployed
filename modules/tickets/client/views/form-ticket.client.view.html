@@ -1,0 +1,106 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.ticket._id ? 'Edit Ticket' : 'New Ticket'}}</h1>
+  </div>
+  <form class="form-inline">
+    <div class="form-group">
+      <label >Class &emsp;</label>
+      Standard &emsp;<input type="radio" name="tclass" value="standard" >&emsp;&emsp;&emsp;
+      Economy &emsp;<input type="radio" name="tclass" value="economy" >&emsp;&emsp;&emsp;
+      First Class &emsp;<input type="radio" name="tclass" value="firstClass">
+    </div>
+    <div class="form-group" style="padding-left:4em " >
+      <label >&emsp;&emsp;&emsp;&emsp; From &emsp;</label>
+      <select name="startLocation" size="1">
+        <option value="Maradana">Maradana</option>
+        <option value="Matara">Matara</option>
+        <option value="Kalutara">Kalutara</option>
+        <option value="Kandy">Kandy</option>
+      </select>
+    </div>
+    <div class="form-group" style="padding-left:4em " >
+      <label >&emsp;&emsp;&emsp;&emsp; From &emsp;</label>
+      <select name="endLocation" size="1">
+        <option value="Galle">Galle</option>
+        <option value="Matara">Matara</option>
+        <option value="Kalutara">Kalutara</option>
+        <option value="Kandy">Kandy</option>
+      </select>
+    </div>
+  </form>
+  </br>
+  <form class="form-inline">
+    <div class="form-group">
+      <label >Ticket Type &emsp;</label>
+      Single &emsp;<input type="radio" name="tclass" value="single" >&emsp;&emsp;&emsp;
+      Return &emsp;<input type="radio" name="tclass" value="return" >&emsp;&emsp;&emsp;
+      First Class &emsp;<input type="radio" name="tclass" value="firstClass"></br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      Adult &emsp;<input type="radio" name="tclass" value="adult" >&emsp;&emsp;&emsp;&emsp;
+      Child &emsp;<input type="radio" name="tclass" value="child" >
+    </div>
+    <div class="form-group" style="padding-left:4em " >
+      <label >&emsp;&emsp;&emsp;&emsp; Date Time &emsp;</label>
+      <input type="datetime-local" class="form-control" style="padding-left:4em ">
+    </div>
+  </form>
+  <div class="page-header">
+    <h1>Ticket Details</h1>
+  </div>
+
+  <form class="form-inline">
+    <div class="form-group" style="padding-left:4em " >
+      <label >Ticket No : &emsp;&emsp;</label>
+      <label >45632 </label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      <label >Class &emsp;&emsp;&emsp;&emsp;</label>
+      <label >Ticket &emsp;&emsp;&emsp;&emsp;</label>
+      <label >Adult &emsp;&emsp;&emsp;&emsp;</label>
+      <label >Child &emsp;&emsp;&emsp;&emsp;</label></br></br>
+      <label >Sub Total : &emsp;&emsp;</label>
+      <label >350.00 </label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      <label >Economy &emsp;&emsp;</label>
+      <label >Single &emsp;&emsp;&emsp;&emsp;</label>
+      <label >Yes &emsp;&emsp;&emsp;&emsp;&emsp;</label>
+      <label >No &emsp;&emsp;&emsp;&emsp;</label></br></br>
+      <label >Tax : &emsp;&emsp;&emsp;&emsp;&emsp;</label>
+      <label >30.00 </label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      <label >From &emsp;&emsp;&emsp;&emsp;</label>
+      <label >To &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label>
+      <label >Price &emsp;&emsp;&emsp;&emsp;&emsp;</label></br></br>
+      <label >Total : &emsp;&emsp;&emsp;&emsp;</label>
+      <label >380.00 </label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      <label >Maradana &emsp;&emsp;</label>
+      <label >Galle &emsp;&emsp;&emsp;&emsp;</label>
+      <label >380.00 &emsp;&emsp;&emsp;&emsp;&emsp;</label></br></br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      <label >Ref No  &emsp;&emsp;&emsp;&emsp;</label>
+      <label >Date Time </label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</br></br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      <label >45632  &emsp;&emsp;&emsp;&emsp;</label>
+      <label >2017/11/16 08.10 a.m </label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</br></br>
+    </div>
+  </form>
+  </br>
+  <div class="col-md-12">
+    <form name="vm.form.ticketForm"  ng-submit="vm.save(vm.form.ticketForm.$valid)" novalidate>
+      <fieldset>
+        <!--
+        <div class="form-group" show-errors>
+          <label class="control-label" for="tclass1">Class</label>
+            <input type="radio" name="tclass" value="standard" ng-model="vm.ticket.tclass" id="tclass1" class="form-control" placeholder="Class" required> Standard
+            <input type="radio" name="tclass" value="economy" ng-model="vm.ticket.tclass" id="tclass2" class="form-control" placeholder="Class" required> Economy
+            <input type="radio" name="tclass" value="firstClass" ng-model="vm.ticket.tclass" id="tclass3" class="form-control" placeholder="Class" required> First Class
+          <div ng-messages="vm.form.ticketForm.tclass.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Ticket Class is required.</p>
+          </div>
+        </div>
+        -->
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.ticket._id ? 'Update' : 'Create'}}</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <button type="submit" class="btn btn-default">Cancel</button>
+        </div>
+
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
